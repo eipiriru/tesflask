@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block isi %}
+    <div class="card">
+        <div class="card-header">
+            <h3>Fitur 1 - Anak Tangga Berwarna</h3>
+        </div>
+        <div class="card-body">
+            {% for i in range(angka) %}
+                {% for j in range(i) %}
+                    <div class="kotak" style="background: {{ color }};color: {{ color }};"></div>
+                {% endfor %}
+                <br>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

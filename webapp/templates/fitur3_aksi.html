@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block isi %}
+    <div class="card">
+        <div class="card-header">
+            <h3>TANGGA</h3>
+        </div>
+        <div class="card-body">
+            Input Ke-1 = {{ a }}<br>
+            Input Ke-2 = {{ b }}<br>
+            <p>
+                <br>
+                Jumlah Karakter pada Input ke-1 ada {{ size_a }}, yaitu = 
+                {% for character, count in count_a.most_common() %}
+                    {{ character }} - 
+                {% endfor %}
+                <br><br>
+                Huruf dari Input Ke-1 yang muncul di Input Ke-2 adalah
+                {% for x in sama %}
+                    {{ x }} - <br>
+                {% endfor %}
+                <br>
+                Sehingga hasilnya adalah = {{ persen }}%
+            </p>
+
+
+    </div>
+{% endblock %}

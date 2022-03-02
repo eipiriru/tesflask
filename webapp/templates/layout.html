@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style type="text/css">
+        .kotak 
+        {
+            height: 20px;
+            width: 20px;;
+            border-style: solid;
+            display: inline-block;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-12 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <div class="">
+                        <a href="{{ url_for('main') }}" class="btn btn-primary">HOME</a>
+                        <a href="{{ url_for('fitur1') }}" class="btn btn-primary">FITUR 1</a>
+                        <a href="{{ url_for('fitur2') }}" class="btn btn-primary">FITUR 2</a>
+                        <a href="{{ url_for('fitur3') }}" class="btn btn-primary">FITUR 3</a>
+                    </div>
+                    
+                </div>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+                <div class="card-body">
+                    {% block isi %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    created by A'inur Kholiz Aprianto
+</footer>
+</html>
